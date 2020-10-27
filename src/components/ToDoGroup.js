@@ -8,7 +8,7 @@ class ToDoGroup extends Component {
     }
     
     render() {
-        const text = this.props.todoText.map((todo) => <label key={todo.id}>{todo.text}</label>);
+        const text = this.props.todoItems.map((todo) => <label key={todo.id}>{todo.text}</label>);
         return (
             <div>
                 <ToDoItemContainer /><br />
