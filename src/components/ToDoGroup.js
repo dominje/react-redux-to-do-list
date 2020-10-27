@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import ToDoItem from './ToDoItem';
+import ToDoItemContainer from '../containers/ToDoItemContainer';
 
 class ToDoGroup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {id: ""}
+    }
+    
     render() {
+        const text = this.props.todoText.map((todo) => <label key={todo.id}>{todo.text}</label>);
         return (
             <div>
-                <h1 />I am the ToDoGroup
-                <ToDoItem />
+                <ToDoItemContainer /><br />
+                {text}<br />
             </div>
         );
     }

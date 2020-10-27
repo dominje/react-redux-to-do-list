@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ToDoGroup from './ToDoGroup';
-import ToDoGenerator from './ToDoGenerator';
+import ToDoGroupContainer from '../containers/ToDoGroupContainer';
+import ToDoGeneratorContainer from '../containers/ToDoGeneratorContainer';
 
 class ToDoList extends Component {
     constructor(props) {
@@ -14,8 +14,8 @@ class ToDoList extends Component {
         return (
             <div>
             <h1 /> ToDoList
-               <ToDoGroup />
-               <ToDoGenerator /> 
+               <ToDoGroupContainer />
+               <ToDoGeneratorContainer /> 
             </div>
         );
     }
