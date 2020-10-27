@@ -1,10 +1,12 @@
 import ToDoItem from "../components/ToDoItem"
 import {connect} from "react-redux"
+import {updateToDo, deleteToDo} from "../actions"
 
-const mapStateToProps = state => ({
-    todoText: state.text,
+const mapDispatchToProps = dispatch => ({
+    updateToDo : (id) => {dispatch(updateToDo(id))},
+    deleteToDo : (id) => {dispatch(deleteToDo(id))}
 })
 
-const ToDoItemContainer = connect(mapStateToProps)(ToDoItem)
+const ToDoItemContainer = connect(null, mapDispatchToProps)(ToDoItem)
 
 export default ToDoItemContainer;

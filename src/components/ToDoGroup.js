@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer';
+import ToDoItem from './ToDoItem';
 
 class ToDoGroup extends Component {
     constructor(props) {
@@ -8,11 +9,11 @@ class ToDoGroup extends Component {
     }
     
     render() {
-        const text = this.props.todoItems.map((todo) => <label key={todo.id}>{todo.text}</label>);
+        const todos = this.props.todoItems.map((todo) => 
+        <ToDoItemContainer key={todo.id} id={todo.id} text={todo.text} done={todo.done} />);
         return (
             <div>
-                <ToDoItemContainer /><br />
-                {text}<br />
+                {todos}
             </div>
         );
     }

@@ -5,21 +5,30 @@ class ToDoItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id : ""
+            id : "",
+            text: "",
+            done: false
         }
     }
 
-    setDone = () => {
-        console.log(uuidv4());
-    }
+    setDone = event => {
+        const element = event.target;
+        element.classList.toggle("crossed-line");
+        this.props.updateToDo(this.props.id);
+    };
+
+    removeItem = () => {
+        this.props.deleteToDo(this.props.id);
+    };
 
     render() {
-        const text = this.props.todoText;
+        const text = this.props.text;
+        
         return (
             <div>
                 <fieldset>
-                    <label onClick={this.setDone}> hello there {text} </label>
-                    <input type="button" value="x" onClick={this.setDone} />
+                    <label onClick={this.setDone}> {text} </label>
+                    <input type="button" value="x" onClick={this.removeItem}></input>
                 </fieldset>
             </div>
         );
