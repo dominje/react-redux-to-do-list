@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer';
+import { List, Typography, Divider } from 'antd';
+
+
+const paginationProps = {
+    showSizeChanger: true,
+    showQuickJumper: true,
+    pageSize: 10,
+};
 
 class ToDoGroup extends Component {
     constructor(props) {
@@ -12,7 +20,17 @@ class ToDoGroup extends Component {
         <ToDoItemContainer key={todo.id} todo={todo} />);
         return (
             <div>
-                {todos}
+
+            <Divider orientation="left">To do List</Divider>
+            <List
+            size="small"
+            bordered
+            dataSource={todos}
+            pagination={paginationProps}
+            
+            renderItem={item => <List.Item >{item}</List.Item>}
+            />
+
             </div>
         );
     }

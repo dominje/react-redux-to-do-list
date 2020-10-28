@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import {updateTodo, deleteTodo} from '../apis/todos'
+import { List, Typography, Divider } from 'antd';
+import { Button, Radio } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
+
 
 class ToDoItem extends Component {
+
+
+
     setDone = event => {
         //const element = event.target;
         //element.classList.toggle("crossed-line");
@@ -23,12 +30,11 @@ class ToDoItem extends Component {
         let todoClass = this.props.todo.done ? "crossed-line" : "";
         
         return (
-            <div>
                 <fieldset>
                     <label className={`${todoClass}`} onClick={this.setDone}> {text} </label>
-                    <input type="button" value="x" onClick={this.removeItem}></input>
+                    <Button type="primary" size={'small'} onClick={this.removeItem}>x</Button>
                 </fieldset>
-            </div>
+
         );
     }
 }
