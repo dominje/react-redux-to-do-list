@@ -5,9 +5,9 @@ import NotFound from './components/NotFound';
 import DoneListContainer from './containers/DoneListContainer';
 import {HashRouter, BrowserRouter, Route, Link, Switch, NotFoundRoute} from 'react-router-dom';
 import React, { Component } from 'react';
-import {connect} from "react-redux"
-import {getTodos} from './apis/todos'
-import {initToDo} from './actions'
+import {connect} from "react-redux";
+import {getTodos} from './apis/todos';
+import {initToDo} from './actions';
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -21,18 +21,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App-header">
+      <div>
         <BrowserRouter>
-          <Link to="/">Go Home, Young Prog</Link>
-          <Link to="/donepage">Go Done, Young Prog</Link>
-          {/* <Menu defaultSelectedKeys={['home']} mode="horizontal">
-            <Menu.Item key="home" >
-              <Link to="/">Go Home, Young Prog</Link>
-            </Menu.Item>
-            <Menu.Item key="done" >
-            <Link to="/donepage">Go Done, Young Prog</Link>
-            </Menu.Item>
-          </Menu> */}
+          {/* <Link to="/">Home Page</Link>
+          <Link to="/donepage">Done List</Link> */}
+          <Menu mode="inline" defaultSelectedKeys={['home']}>
+            <Menu.Item key="home" icon={<MailOutlined />}><Link to="/">Home Page</Link></Menu.Item>
+            <Menu.Item key="done"><Link to="/donepage">Done List</Link></Menu.Item>
+          </Menu>
           
           <Switch>
             <Route exact path="/donepage" component={DoneListContainer}></Route>
