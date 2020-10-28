@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import {addTodo} from '../apis/todos'
+import { Input } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+
+const { Search } = Input;
 
 class ToDoGenerator extends Component {
     constructor(props) {
@@ -8,15 +12,8 @@ class ToDoGenerator extends Component {
         this.state = {input: ''}
     }
 
-    onChange = (event) => {
-        const value = event.target.value;
-        this.setState(() => {
-            return {input: value}
-        });
-    }
-
     addToList = (event) => {
-        addTodo(this.state.input).then(response => {
+        addTodo(event).then(response => {
             console.log(response);
             this.props.addToDo(response.data);
             this.setState({
@@ -28,12 +25,14 @@ class ToDoGenerator extends Component {
     render() {
         return (
             <div>
-                <input  type="text"
+                <Search type="text"
                         name="size"
                         id="size"
                         placeholder="Insert a Todo item, b0ss"
-                        onChange={this.onChange}/>
-                <input type="button" value="add" onClick={this.addToList} />
+                        enterButton="ADD"
+                        size="large"
+                        onSearch={this.addToList}
+                        />
             </div>
         );
     }
