@@ -31,8 +31,10 @@ class ToDoItem extends Component {
         
         return (
                 <fieldset>
+                    <Button type="primary" size={'small'} onClick={this.removeItem} ghost>x</Button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <label className={`${todoClass}`} onClick={this.setDone}> {text} </label>
-                    <Button type="primary" size={'small'} onClick={this.removeItem}>x</Button>
+                  
                 </fieldset>
 
         );
