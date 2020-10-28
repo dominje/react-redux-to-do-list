@@ -9,7 +9,8 @@ import {connect} from "react-redux";
 import {getTodos} from './apis/todos';
 import {initToDo} from './actions';
 import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { HomeOutlined, UnorderedListOutlined } from '@ant-design/icons';
+import "antd/dist/antd.css";
 
 class App extends Component {
   componentDidMount(){
@@ -25,9 +26,9 @@ class App extends Component {
         <BrowserRouter>
           {/* <Link to="/">Home Page</Link>
           <Link to="/donepage">Done List</Link> */}
-          <Menu mode="inline" defaultSelectedKeys={['home']}>
-            <Menu.Item key="home" icon={<MailOutlined />}><Link to="/">Home Page</Link></Menu.Item>
-            <Menu.Item key="done"><Link to="/donepage">Done List</Link></Menu.Item>
+          <Menu mode="horizontal" defaultSelectedKeys={['home']}>
+            <Menu.Item key="home" icon={<HomeOutlined />}><Link to="/">Home Page</Link></Menu.Item>
+        <Menu.Item key="done" icon={<UnorderedListOutlined />}><Link to="/donepage">Done List</Link></Menu.Item>
           </Menu>
           
           <Switch>
