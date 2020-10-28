@@ -9,8 +9,8 @@ class ToDoGroup extends Component {
     }
     
     render() {
-        const todos = this.props.todoItems.map((todo) => 
-        <ToDoItemContainer key={todo.id} id={todo.id} text={todo.text} done={todo.done} />);
+        const todos = this.props.todoItems.map((todo) => // 
+        <ToDoItemContainer key={todo.id} todo={todo} />);
         return (
             <div>
                 {todos}
