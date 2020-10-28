@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid'
+import {addTodo} from '../apis/todos'
 
 class ToDoGenerator extends Component {
     constructor(props) {
         super(props);
-        this.state = {input: ""}
+        this.state = {input: ''}
     }
 
     onChange = (event) => {
@@ -14,11 +15,14 @@ class ToDoGenerator extends Component {
         });
     }
 
-    addToList = () => {
-        const value = this.state.input;
-        const id = uuidv4();
-        const todo = {id: id, text: value, done: false}
-        this.props.addToDo(todo);
+    addToList = (event) => {
+        addTodo(this.state.input).then(response => {
+            console.log(response);
+            this.props.addToDo(response.data);
+            this.setState({
+                input:''
+            });
+        });
     }
 
     render() {
