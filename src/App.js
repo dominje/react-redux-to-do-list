@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import ToDoList from './components/ToDoList';
 import NotFound from './components/NotFound';
 import DoneListContainer from './containers/DoneListContainer';
-import {HashRouter, BrowserRouter, Route, Link, Switch, NotFoundRoute} from 'react-router-dom';
+import {HashRouter, BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {getTodos} from './apis/todos';
@@ -24,11 +23,9 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          {/* <Link to="/">Home Page</Link>
-          <Link to="/donepage">Done List</Link> */}
           <Menu mode="horizontal" defaultSelectedKeys={['home']}>
             <Menu.Item key="home" icon={<HomeOutlined />}><Link to="/">Home Page</Link></Menu.Item>
-        <Menu.Item key="done" icon={<UnorderedListOutlined />}><Link to="/donepage">Done List</Link></Menu.Item>
+            <Menu.Item key="done" icon={<UnorderedListOutlined />}><Link to="/donepage">Done List</Link></Menu.Item>
           </Menu>
           
           <Switch>

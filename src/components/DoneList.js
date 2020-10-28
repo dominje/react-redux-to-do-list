@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Typography, Divider } from 'antd';
+import { List, Divider } from 'antd';
 
 const paginationProps = {
     showSizeChanger: true,

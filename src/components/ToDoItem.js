@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {updateTodo, deleteTodo} from '../apis/todos'
-import { List, Typography, Divider } from 'antd';
-import { Button, Radio } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 
 class ToDoItem extends Component {
@@ -10,8 +8,6 @@ class ToDoItem extends Component {
 
 
     setDone = event => {
-        //const element = event.target;
-        //element.classList.toggle("crossed-line");
         updateTodo(this.props.todo.id,this.props.todo.done).then(response => {
             this.props.updateToDo(response.data.id);
         });

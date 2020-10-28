@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer';
-import { List, Typography, Divider } from 'antd';
+import { List, Divider } from 'antd';
 
 
 const paginationProps = {
