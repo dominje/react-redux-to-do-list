@@ -2,7 +2,7 @@ import ToDoGroup from "../components/ToDoGroup"
 import {connect} from "react-redux"
 
 const mapStateToProps = state => ({
-    todoItems: state.todo,
+    todoItems: state.todoList,
 })
 
 const ToDoGroupContainer = connect(mapStateToProps)(ToDoGroup)

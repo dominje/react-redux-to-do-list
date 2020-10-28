@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
 
-const todo = (state = [], action) => {
+const todoList = (state = [], action) => {
     if (action.type === "ADD_ITEM"){
         return [...state,action.payload];
     }
@@ -14,5 +14,5 @@ const todo = (state = [], action) => {
 }
 
 export default combineReducers({
-    todo
+    todoList
 })
