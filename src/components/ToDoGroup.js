@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer';
-import ToDoItem from './ToDoItem';
 
 class ToDoGroup extends Component {
     constructor(props) {
