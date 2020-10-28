@@ -18,9 +18,6 @@ class ToDoGenerator extends Component {
         const value = this.state.input;
         const id = uuidv4();
         const todo = {id: id, text: value, done: false}
-        console.log(todo.id);
-        console.log(todo.text);
-        console.log(todo.done);
         this.props.addToDo(todo);
     }
 
