@@ -9,3 +9,7 @@ export const updateToDo = id => {
 export const deleteToDo = id => {
     return {type: "DELETE_ITEM", payload: id};
 }
+
+export const initToDo = todos => {
+    return {type: "INIT_TODO", payload: todos};
+}
